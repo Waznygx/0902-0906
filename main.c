@@ -471,95 +471,37 @@
 //	return 0;
 //}
 
-////猜数字游戏
-//#include<stdlib.h>
-//#include<time.h>
-//void game()
-//{
-//	int rand_num = rand() % 100 + 1;
-//	int input = 0;
-//	while (1)
-//	{
-//		printf("请输入你猜测的数字：");
-//		scanf("%d", &input);
-//		if (input > rand_num)
-//		{
-//			printf("猜大了\n");
-//		}
-//		else if (input < rand_num)
-//		{
-//			printf("猜小了\n");
-//		}
-//		else
-//		{
-//			printf("猜对了\n");
-//			break;
-//		}
-//	}
-//}
-//void menu()
-//{
-//	printf("\n  ******************************************\n");
-//	printf("  ******************************************\n");
-//	printf("  ****************   0.exit  ***************\n");
-//	printf("  ****************   1.play  ***************\n");
-//	printf("  ******************************************\n");
-//	printf("  ******************************************\n");
-//}
-//int main()
-//{
-//	int num = 0;
-//	srand((unsigned)time(NULL));
-//	do
-//	{
-//		menu();
-//		printf("\n请选择你的操作：");
-//		scanf("%d", &num);
-//		switch (num)
-//		{
-//		case 0:
-//			printf("退出系统！\n");
-//			break;
-//		case 1:
-//			printf("开始游戏！\n");
-//			game();
-//			break;
-//		default:
-//			printf("选择错误！请重新选择！\n");
-//			break;
-//		}
-//	} while (num);
-//	return 0;
-//}
-
-//冒泡排序(倒序)
-void maopao(int arr[], int length)
+//猜数字游戏
+void menu()
 {
-	int i = 0;
-	int j = 0;
-	for (i = 0; i < length - 1; i++)
-	{
-		for ( j = 0; j < length - 1 - i; j++)
-		{
-			if (arr[j] < arr[j + 1])
-			{
-				int temp = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = temp;
-			}
-		}
-		
-	}
-
+	printf("\n  ******************************************\n");
+	printf("  ******************************************\n");
+	printf("  ****************   0.exit  ***************\n");
+	printf("  ****************   1.play  ***************\n");
+	printf("  ******************************************\n");
+	printf("  ******************************************\n");
 }
 int main()
 {
-	int arr[] = { 4,24,13,42,53,46,55,57,73,95,88,29,19 };
-	int length = sizeof(arr) / sizeof(arr[0]);
-	maopao(arr, length);
-	for (int i = 0; i < length; i++)
+	menu();
+	int num = 0;
+	printf("请选择你的操作：");
+	scanf("%d", &num);
+	do
 	{
-		printf("%d ", arr[i]);
-	}
+		switch (num)
+		{
+		case 0:
+			printf("退出系统！\n");
+			break;
+		case 1:
+			printf("开始游戏！\n");
+			game();
+			break;
+		default:
+			printf("选择错误！请重新选择！");
+			break;
+		}
+	} while (num);
 	return 0;
 }
